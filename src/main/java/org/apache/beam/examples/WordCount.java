@@ -190,6 +190,5 @@ public class WordCount {
 
     p.run().waitUntilFinish();
 
-    p.run().waitUntilFinish();
   }
 }
