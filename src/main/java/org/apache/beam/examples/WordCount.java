@@ -185,10 +185,11 @@ public class WordCount {
 //     .apply("WriteCounts", TextIO.write().to(options.getOutput()));
 
     p.apply("ReadLines", TextIO.read().from(options.getInputFile()))
-     .apply("Writing1", TextIO.write().to("gs://jasonlai_bucket1/JasonLai/output/a1.csv"));
+     .apply("Writing1", TextIO.write().to("gs://jasonlai_bucket1/JasonLai/output/a1.csv").withoutSharding());
 //     .apply("Writing1", TextIO.write().to(options.getOutput()).withSuffix(".csv"));
 
     p.run().waitUntilFinish();
+
     p.run().waitUntilFinish();
   }
 }
